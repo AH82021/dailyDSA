@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class LongestSubstringWithoutRepeatingChars {
@@ -19,4 +20,28 @@ public class LongestSubstringWithoutRepeatingChars {
 
  return longestLength;
     }
+    public int lengthOfLongestSubstring2(String s) {
+        // initialize a hash map to store the indices of the characters
+        HashMap<Character, Integer> map = new HashMap<>();
+        // initialize the start and end of the window, and the result
+        int start = 0, end = 0, result = 0;
+        // loop through the string
+        while (end < s.length()) {
+            // get the current character
+            char c = s.charAt(end);
+            // if the character is already in the map, update the start of the window
+            if (map.containsKey(c)) {
+                start = Math.max(start, map.get(c) + 1);
+            }
+            // update the map with the current index
+            map.put(c, end);
+            // update the result with the current window length
+            result = Math.max(result, end - start + 1);
+            // increment the end of the window
+            end++;
+        }
+        // return the final result
+        return result;
+    }
+
 }
