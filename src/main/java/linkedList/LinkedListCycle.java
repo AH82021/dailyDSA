@@ -1,6 +1,6 @@
 package linkedList;
 
-import java.util.List;
+
 
 public class LinkedListCycle {
     class ListNode{
