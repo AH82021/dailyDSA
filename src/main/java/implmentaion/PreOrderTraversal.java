@@ -46,12 +46,16 @@ public  void  postOrder(Node root){
      tree.root.right.right = new Node(7);
      tree.root.right.left = new Node(6);
 
-    // tree.preorder(tree.root);
+
+
 //     tree.postOrder(tree.root);
 //        System.out.println();
 //        System.out.println(findMax(tree.root));
 
         System.out.println(searchInBinaryTree(tree.root,4));
+        addValue(tree.root,9);
+        tree.inOrder(tree.root);
+
 
 
     }
@@ -84,6 +88,23 @@ public  void  postOrder(Node root){
         int leftMax = findMax(root.left);
      int rightMax = findMax((root.right));
      return Math.max(root.value,Math.max(leftMax,rightMax));
+
+    }
+
+    public static Node addValue(Node root,int value){
+     if(root == null) {
+        return  new Node(value);
+     }
+
+     if(value <root.value){
+        root.left = addValue(root.left,value);
+     } else if(value > root.value) {
+       root.right =  addValue(root.right, value);
+     }
+
+     return  root;
+
+
 
     }
 
