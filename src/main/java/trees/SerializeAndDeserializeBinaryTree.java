@@ -1,6 +1,7 @@
 package trees;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 // Serialize and Deserialize Binary Tree
 
@@ -35,6 +36,7 @@ public class SerializeAndDeserializeBinaryTree {
      }
 
      private void serializeDFS(TreeNode root, List<String> list) {
+
          if(root == null){
              list.add("N");
              return;
