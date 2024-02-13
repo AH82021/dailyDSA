@@ -3,6 +3,7 @@ package twoPointers;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 /**
  Given an array with positive numbers and a target number,
@@ -55,21 +56,21 @@ import java.util.List;
  */
 
 public class SubArraysWthProductLessThanATarget {
-    public static List<List<Integer>> findSubArrays(int[] arr, int target){
+    public static List<List<Integer>> findSubArrays(int[] arr, int target) {
         List<List<Integer>> subArrays = new ArrayList<>();
         int product = 1;
         int left = 0;
 
-        for(int right = 0; right < arr.length; right++){
-            product *=arr[right];
-            while (product >= target && left <arr.length) {
+        for (int right = 0; right < arr.length; right++) {
+            product *= arr[right];
+            while (product >= target && left < arr.length) {
                 product /= arr[left++];
             }
-                List<Integer> tempList = new LinkedList<>();
-                for (int i = right; i >=left ; i--) {
-                    tempList.add(0,arr[i]);
-                    subArrays.add(new ArrayList<>(tempList));
-                }
+            List<Integer> tempList = new LinkedList<>();
+            for (int i = right; i >= left; i--) {
+                tempList.add(0, arr[i]);
+                subArrays.add(new ArrayList<>(tempList));
+            }
 
         }
 
@@ -78,10 +79,26 @@ public class SubArraysWthProductLessThanATarget {
 
     }
 
-//    public static void main(String[] args) {
-//        int[] nums = {2, 5, 3, 10};
-//        int target = 30;
-//        System.out.println(findSubArrays(nums,target));
-//    }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
