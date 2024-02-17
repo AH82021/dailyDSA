@@ -2,6 +2,7 @@ package misc;
 
 import java.util.HashMap;
 import java.util.Map;
+//Find the frequency of each char in String.
 
 public class FrequencyOfChar {
     public static void getCharacterFrequency(String str){
