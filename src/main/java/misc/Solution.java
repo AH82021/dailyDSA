@@ -6,7 +6,7 @@ import java.util.List;
 
 /*
 Amazon Warehouse delivers different items in different trucks having varied capacities.
-Given an array, trucks, of n integers that represents the capacities of different trucks, and an array, items, of m integers that represent the weights of different items,
+Given an array, trucks, of n integers that represent the capacities of different trucks, and an array, items, of m integers that represent the weights of different items,
  for each item, find the index of the smallest truck which has a capacity greater than the item's weight.
  If there are multiple such trucks, choose the one with the minimum index.
  If there is no truck that can carry the item, report -1 as the answer for the corresponding item.
@@ -21,7 +21,7 @@ Similar logic is applied to the other elements and the answer is [3, 0, 2].
 Complete the function get TrucksFortems in the editor below.
 
 
-getTrucksFortems has the following parameters: int trucks[n]: the capacities of the trucks int items[q]: the weights of the items
+getTrucksForItems has the following parameters: int trucks[n]: the capacities of the trucks int items[q]: the weights of the items
 
  */
 public class Solution {
@@ -45,7 +45,7 @@ public class Solution {
     public static void main(String[] args) {
         List<Integer> trucks = Arrays.asList(4,5,7,2);
         List<Integer> items = Arrays.asList(1,2,5);
-        System.out.println(getTrucksFortems(trucks, items));
+        System.out.println(getTrucksForItems(trucks, items));
     }
 
 
