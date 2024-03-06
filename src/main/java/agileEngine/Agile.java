@@ -14,7 +14,8 @@ class VisitCounter {
         return Arrays.stream(visits)
                 .filter(Objects::nonNull) // Filter out null maps
                 .flatMap(map -> map.entrySet().stream()) // Stream of map entries
-                .filter(entry -> entry.getKey() != null && entry.getValue() != null && entry.getValue().getVisitCount().isPresent()) // Filter valid entries
+                .filter(entry -> entry.getKey() != null && entry.getValue()
+                        != null && entry.getValue().getVisitCount().isPresent()) // Filter valid entries
                 .filter(entry -> {
                     try {
                         Long.parseLong(entry.getKey()); // Check if key is parseable to Long
